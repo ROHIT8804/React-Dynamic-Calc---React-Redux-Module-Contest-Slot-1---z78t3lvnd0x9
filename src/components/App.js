@@ -12,9 +12,9 @@ const [number2,setNum2] = useState('');
   
   return (
     <div id="main">
-      <input id='input1' onChange={(e)=>setNum1(e.target.value)}/>
+      <input id='input1' value={number1} onChange={(e)=>setNum1(e.target.value)}/>
        +
-      <input id='input2' onChange={(e)=>setNum2(e.target.value)}/> 
+      <input id='input2' value={number2} onChange={(e)=>setNum2(e.target.value)}/> 
       
       <p id='result'>{handleAddition()}</p>
     </div>
