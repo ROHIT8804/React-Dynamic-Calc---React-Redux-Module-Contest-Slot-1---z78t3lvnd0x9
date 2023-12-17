@@ -5,10 +5,10 @@ const App = () => {
   const [number2, setNum2] = useState('');
   const [res, setRes] = useState(0); // Changed to a number instead of string
 
-  const handleAddition = () => {
-    const sum = parseInt(number1 || 0, 10) + parseInt(number2 || 0, 10); // Parsing numbers, handling empty strings
+  useEffect(() => {
+    const sum = parseInt(number1 || 0, 10) + parseInt(number2 || 0, 10); // Calculate sum whenever number1 or number2 changes
     setRes(sum);
-  };
+  }, [number1, number2]);
 
   return (
     <div id="main">
@@ -18,9 +18,6 @@ const App = () => {
 
       {/* Displaying the result */}
       <p id='result'>{res}</p>
-      
-      {/* Triggering addition */}
-      <button onClick={handleAddition}>Add</button>
     </div>
   );
 }
